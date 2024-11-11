@@ -19,8 +19,6 @@ int main()
 		{
 			arr[i]++;
 		}
-		start = 0;
-		end = 0;
 	}
 
 	for (int i = 1; i <= 100; i++)

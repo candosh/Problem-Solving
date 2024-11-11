@@ -5,9 +5,7 @@ using namespace std;
 
 int main()
 {
-	int Alpha[26] = {
-		0,
-	};
+	int Alpha[26] = {0,};
 	string c;
 
 	cin >> c;
