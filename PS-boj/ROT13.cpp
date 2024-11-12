@@ -1,42 +1,37 @@
-// 백준 : ROT13 , 브론즈 1
-// 카이사르 암호
-// c++ 입력 함수 getline() 한줄씩 저장
-// length()와 size() 함수는 모두 문자열의 길이(문자 수)를 반환하며, 기능적으로 동일
+// 풀이 : https://seize-the-day9.tistory.com/51
 
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main()
 {
-    string s;
-    getline(cin, s);
+    string str;
+    getline(cin, str);
 
-    for (int i = 0; i < s.size(); i++)
+    for (int i = 0; i < str.size(); i++)
     {
-        char alph = s[i];
-        if (alph >= 'a' && alph <= 'z')
+        if (str[i] >= 65 && str[i] < 97)
         {
-            if (alph - 'a' < 13)
+            if (str[i] + 13 > 90)
             {
-                alph += 13;
+                str[i] -= 13; // str[i] + 13 -26
             }
             else
-                alph -= 13;
+                str[i] += 13;
         }
-
-        else if (alph > 'A' && alph <= 'Z')
+        else if (str[i] >= 97 && str[i] < 123)
         {
-            if (alph - 'A' < 13)
+            if (str[i] + 13 > 122)
             {
-                alph += 13;
+                str[i] -= 13;
             }
             else
-                alph -= 13;
+                str[i] += 13;
         }
-        s[i] = alph;
     }
 
-    cout << s << "\n";
+    cout << str << "\n";
 
     return 0;
 }
